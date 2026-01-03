@@ -9,7 +9,19 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in! Try to get as close to 100% correctness across all runs as possible.
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a math engine. Your task is to solve mathematical problems and follow strictly the user output.
+
+Make sure to show your reasoning step-by-step when solving mathematical problems.
+
+Here are some examples of showing your reasoning here:
+
+EXAMPLES:
+
+Question: Henry bought six dozen apples. Then he sold half. Then he bought another dozen. How many does he have?
+Steps: Translate english to numbers (six dozen = 6 * 12 = 72). Convert to mathematical question. Solve the question.
+Answer: 48
+"""
 
 USER_PROMPT = """
 Solve this problem, then give the final answer on the last line as "Answer: <number>".
