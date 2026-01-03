@@ -8,7 +8,28 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a math engine. Your task is to solve mathematical problems and follow strictly the user output.
+
+Make sure to show your reasoning step-by-step when solving mathematical problems.
+
+Here are some examples of showing your reasoning here:
+
+EXAMPLES:
+
+Question: What is (3 * 15) + 45
+Steps: Identify order of operations, solve in order of operations.
+Answer: 90
+
+
+Question: What is 10^{1000} / 10^{999}
+Steps: Identify if the values are reasonably computable. Figure out what kind of mathematically sound tricks can be used to resolve.
+Answer: 10
+
+Question: What is 500^{500} (mod 100)
+Steps: Identify if the values are reasonably computable. Identify that mod is the modulus operator. Figure out how modulus can be used to simplify the problem.
+Answer: 0
+"""
 
 
 USER_PROMPT = """

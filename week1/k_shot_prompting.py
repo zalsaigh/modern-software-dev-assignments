@@ -7,7 +7,43 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a string processing engine.
+
+Task: Given an input of a string, you should reverse the string character-by-character, and then output the result.
+
+Ensure the string reversal is at the character-level, not the word-level. You should treat the input as a list of characters.
+Some strings will be mashed together with no spaces. For example, mysteryman (instead of mystery man). In that case, you should reverse as namyretsym and NOT manmystery (TREAT AS ONE FULL LIST OF CHARACTERS).
+
+Here are some examples of the task you need to do.
+
+EXAMPLES:
+
+INPUT: httpport
+OUTPUT: tropptth
+
+INPUT: status
+OUTPUT: sutats
+
+INPUT: httpstatus
+OUTPUT: sutatsptth
+
+
+INPUT: ballatro
+OUTPUT: ortallab
+
+INPUT: wagwan
+OUTPUT: nawgaw
+
+INPUT: baklava
+OUTPUT: avalkab
+
+INPUT: mysteryman
+OUTPUT: namyretsym
+
+INPUT: tonight
+OUTPUT: thginot
+"""
 
 USER_PROMPT = """
 Reverse the order of letters in the following word. Only output the reversed word, no other text:
