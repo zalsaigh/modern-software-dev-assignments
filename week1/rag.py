@@ -37,7 +37,24 @@ QUESTION = (
 
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a code generating tool. You can, however, use API described in context that the user provides you. I will provide examples of what you should do if the user provides context.
+
+Example:
+
+```
+Context:
+- API Reference
+- Base URL: https://api.example.com/v1
+- Authentication:
+- Provide header X-API-Key: <your key>
+- Endpoints:
+- GET /games/{id}
+- Returns 200 with JSON: {"id": <string>, "gameName": <string>}
+```
+
+Given this context, the user may ask you to write a functiont that fetches a game given an ID. You should call that API with the key provided with the ID as a parameter.
+"""
 
 
 # For this simple example
@@ -56,7 +73,7 @@ def YOUR_CONTEXT_PROVIDER(corpus: List[str]) -> List[str]:
 
     For example, return [] to simulate missing context, or [corpus[0]] to include the API docs.
     """
-    return []
+    return corpus
 
 
 def make_user_prompt(question: str, context_docs: List[str]) -> str:
