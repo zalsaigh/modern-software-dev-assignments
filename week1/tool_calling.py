@@ -70,7 +70,17 @@ TOOL_REGISTRY: Dict[str, Callable[..., str]] = {
 # ==========================
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You have access to a tool called 'output_every_func_return_type'. You can call it in JSON form as such:
+
+```
+{
+   "tool": "output_every_func_return_type"
+}
+```
+
+When you are prompted to use the tool, output the JSON above without the backticks.
+"""
 
 
 def resolve_path(p: str) -> str:
